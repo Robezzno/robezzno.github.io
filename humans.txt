@@ -1,0 +1,8 @@
+/* TEAM */
+Developer: SafTech
+Contact: robezzno@gmail.com
+From: Spain
+
+/* SITE */
+Stack: HTML, CSS, JS, xterm.js, typed.js, canvas-confetti, vanilla-tilt
+Easter eggs: yes. Try ~ and the Konami code.

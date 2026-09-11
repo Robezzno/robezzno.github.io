@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SafTech · Custom bots, apps and automation</title>
+<meta name="description" content="Independent developer. Telegram bots, AI-powered Android apps, custom tools, websites and connected hardware. Software that works, delivered with tests and deployment included.">
+<link rel="canonical" href="https://robezzno.github.io/en/">
+<link rel="alternate" hreflang="es" href="https://robezzno.github.io/">
+<link rel="alternate" hreflang="en" href="https://robezzno.github.io/en/">
+<link rel="alternate" hreflang="fr" href="https://robezzno.github.io/fr/">
+<link rel="alternate" hreflang="de" href="https://robezzno.github.io/de/">
+<link rel="alternate" hreflang="pt" href="https://robezzno.github.io/pt/">
+<link rel="alternate" hreflang="x-default" href="https://robezzno.github.io/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="SafTech · Custom bots, apps and automation">
+<meta property="og:description" content="Independent developer. Telegram bots, AI-powered Android apps, custom tools, websites and connected hardware. Software that works, delivered with tests and deployment included.">
+<meta property="og:url" content="https://robezzno.github.io/en/">
+<meta property="og:image" content="https://robezzno.github.io/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0b0f14">
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/style.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/xterm@5.3.0/css/xterm.css">
+<script>window.SAF={lang:"en",def:"es",langs:["es", "en", "fr", "de", "pt"],email:"robezzno@gmail.com",words:["Bots", "Apps", "Automations", "Tools", "Devices"],cli:{"hint": "interactive terminal · type help and press Enter", "boot": ["[ ok ] mounting /home/saftech", "[ ok ] loading 120+ repositories", "[ ok ] starting bots (24/7)", "[ ok ] coffee detected", "ready. type `help` to see the commands."], "help": ["help        this help", "ls          site sections", "cd <sec>    go to a section (services, projects, process, about, contact)", "cat about   about me", "neofetch    system info", "lang <xx>   switch language (es en fr de pt)", "hire        hire me", "crt         cathode-ray mode", "matrix      follow the white rabbit", "clear       clear screen", "...and a few that aren't listed here."], "whoami": "curious visitor. Good start.", "notfound": "command not found: {cmd}. Try `help`.", "sudo": "Root won't get you hired faster, but I like the attitude.", "hire": "Opening your mail client... if it doesn't: robezzno@gmail.com", "rm": "Deleting reality... 3... 2... 1... just kidding. Everything's still here.", "matrix": "Follow the white rabbit. (click to exit)", "crt_on": "CRT mode on. Welcome to 1987.", "crt_off": "CRT mode off.", "konami": "30 lives! Well... confetti.", "exit": "There is no exit. Only scroll.", "nosec": "no such section. Try `ls`.", "lang_ok": "switching language...", "lang_bad": "available languages: es en fr de pt", "shortcuts": "shortcuts: ~ opens the console · ? this help · Konami code ↑↑↓↓←→←→BA", "cat_bad": "no such file. Try `cat about`.", "coffee": "☕ brewing coffee... done. Productivity +20%.", "vim": "How to exit vim: you can't. We live here now.", "date": "the date is {date}. A good day to start your project.", "secret": "You found the secret command. Put the word \"konami\" in your email and get 10% off your first project."},sections:{"services": "Services", "projects": "Projects", "process": "How I work", "about": "About", "contact": "Contact"}};</script>
+<script src="https://cdn.jsdelivr.net/npm/xterm@5.3.0/lib/xterm.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/xterm-addon-fit@0.8.0/lib/xterm-addon-fit.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/typed.js@2.1.0/dist/typed.umd.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/vanilla-tilt@1.8.1/dist/vanilla-tilt.min.js" defer></script>
+<script src="/assets/main.js" defer></script>
+<!--
+   ____  _  _  _____
+  / ___|| || ||  ___|   ¿Leyendo el código fuente? Buena señal.
+  \___ \| || |_| |_     Reading the source? Good sign.
+   ___) |__   _|  _|
+  |____/   |_| |_|      Abre la consola del navegador y escribe hire()
+                        Pulsa ~ en la web para la consola oculta.
+-->
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"ProfessionalService","name":"SafTech","url":"https://robezzno.github.io/","email":"robezzno@gmail.com","sameAs":["https://github.com/Robezzno"],"description":"Independent developer. Telegram bots, AI-powered Android apps, custom tools, websites and connected hardware. Software that works, delivered with tests and deployment included.","areaServed":"Worldwide","availableLanguage":["es","en","fr","de","pt"]}
+</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="top">
+  <a class="brand" href="/en/" aria-label="SafTech">
+    <span class="mark" aria-hidden="true">S4F</span><span class="word glitch" data-text="saftech">saftech</span><span class="blink" aria-hidden="true">_</span>
+  </a>
+  <nav class="menu" aria-label="Main">
+    <a href="#services">Services</a>
+    <a href="#projects">Projects</a>
+    <a href="#process">How I work</a>
+    <a href="#about">About</a>
+    <a class="btn small" href="#contact">Contact</a>
+  </nav>
+  <div class="langs" aria-label="Language"><a href="/" lang="es" hreflang="es" data-lang="es">ES</a><a href="/en/" lang="en" hreflang="en" aria-current="page" class="on" data-lang="en">EN</a><a href="/fr/" lang="fr" hreflang="fr" data-lang="fr">FR</a><a href="/de/" lang="de" hreflang="de" data-lang="de">DE</a><a href="/pt/" lang="pt" hreflang="pt" data-lang="pt">PT</a></div>
+  <button class="burger" aria-label="Menu" aria-expanded="false" aria-controls="mobile-menu"><span></span><span></span><span></span></button>
+</header>
+<nav id="mobile-menu" class="mobile" hidden>
+  <a href="#services">Services</a>
+  <a href="#projects">Projects</a>
+  <a href="#process">How I work</a>
+  <a href="#about">About</a>
+  <a href="#contact">Contact</a>
+  <div class="langs"><a href="/" lang="es" hreflang="es" data-lang="es">ES</a><a href="/en/" lang="en" hreflang="en" aria-current="page" class="on" data-lang="en">EN</a><a href="/fr/" lang="fr" hreflang="fr" data-lang="fr">FR</a><a href="/de/" lang="de" hreflang="de" data-lang="de">DE</a><a href="/pt/" lang="pt" hreflang="pt" data-lang="pt">PT</a></div>
+</nav>
+
+<main id="main">
+<section class="hero" id="top">
+  <div class="grid-bg" aria-hidden="true"></div>
+  <p class="eyebrow"><span class="dot"></span>SafTech · custom development</p>
+  <h1><span class="typed" data-words="Bots|Apps|Automations|Tools|Devices">Bots</span><br>that work for you.</h1>
+  <p class="lead">I&#x27;m an independent full-stack developer. I turn ideas into working software: Telegram bots that serve customers and log data, AI-powered Android apps, custom tools, fast websites and connected devices.</p>
+  <div class="cta-row">
+    <a class="btn" href="#contact">Tell me about your project</a>
+    <a class="btn ghost" href="#projects">See projects</a>
+  </div>
+  <div class="stats"><div class="stat"><strong>120+</strong><span>projects on GitHub</span></div><div class="stat"><strong>24/7</strong><span>bots in production</span></div><div class="stat"><strong>5</strong><span>languages on this site</span></div></div>
+  <div class="termwrap">
+    <div class="termbar"><span class="tl r"></span><span class="tl y"></span><span class="tl g"></span><span class="ttl">visitor@saftech: ~</span><span class="thint">interactive terminal · type help and press Enter</span></div>
+    <div id="hero-term" class="term" tabindex="0"><pre class="term-fallback"><span class="p">$</span> saftech --new "your idea"
+<span class="ok">✔</span> proposal with fixed scope and price
+<span class="ok">✔</span> development with weekly deliveries
+<span class="ok">✔</span> deployed, tested and documented<span class="cursor"></span></pre></div>
+  </div>
+</section>
+
+<section id="services" class="section">
+  <div class="head"><p class="kicker">01 · Services</p><h2>What I can build for you</h2><p class="sub">Fixed-scope projects with a fixed price and no surprises. If what you need isn&#x27;t listed, ask anyway.</p></div>
+  <div class="cards three"><article class="card svc"><div class="svc-ico"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v3M8 21h8M5 8h14a2 2 0 0 1 2 2v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-6a2 2 0 0 1 2-2z"/><circle cx="9" cy="13" r="1.2"/><circle cx="15" cy="13" r="1.2"/></svg></div><h3>Telegram bots and automation</h3><p>Bots that serve customers, take orders, log data, send alerts and understand voice notes and natural language. Admin panel, database and deployment included.</p><ul class="tags"><li>Python</li><li>python-telegram-bot</li><li>SQLite/Postgres</li><li>Voice &amp; AI</li></ul></article><article class="card svc"><div class="svc-ico"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6" y="2.5" width="12" height="19" rx="2.5"/><path d="M10 18.5h4"/></svg></div><h3>AI-powered Android apps</h3><p>Native apps in Kotlin and Jetpack Compose: AI image generation, ads, in-app purchases and everything needed to publish on Google Play.</p><ul class="tags"><li>Kotlin</li><li>Jetpack Compose</li><li>AdMob</li><li>Play Billing</li></ul></article><article class="card svc"><div class="svc-ico"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 3h6v3.5a1.5 1.5 0 0 0 3 0V3h3v6h-3.5a1.5 1.5 0 0 0 0 3H21v6h-6v-3.5a1.5 1.5 0 0 0-3 0V21H3v-6h3.5a1.5 1.5 0 0 0 0-3H3V6h6V3z"/></svg></div><h3>Extensions and tools</h3><p>Browser and VS Code extensions, scrapers, data dashboards and command-line utilities that remove repetitive work. Price or market alerts via Telegram too, if your business needs them.</p><ul class="tags"><li>WebExtension</li><li>VS Code API</li><li>Scraping</li><li>Dashboards</li></ul></article><article class="card svc"><div class="svc-ico"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3.5 3 14.5 0 18M12 3c-3 3.5-3 14.5 0 18"/></svg></div><h3>Websites and landing pages</h3><p>Blazing-fast static sites, landing pages that convert and platforms with a backend. Technical SEO and multilingual versions from day one.</p><ul class="tags"><li>Next.js</li><li>HTML/CSS</li><li>SEO</li><li>i18n</li></ul></article><article class="card svc"><div class="svc-ico"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8L12 3zM5 18l.7 1.8L7.5 20.5l-1.8.7L5 23l-.7-1.8-1.8-.7 1.8-.7L5 18z"/></svg></div><h3>AI integration</h3><p>I connect your product to language and image models (Gemini, Claude, GPT) through secure proxies so API keys never leave the server. Speech to text, agents and content generation.</p><ul class="tags"><li>OpenRouter</li><li>Cloudflare Workers</li><li>Agents</li><li>Voice</li></ul></article><article class="card svc"><div class="svc-ico"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6" y="6" width="12" height="12" rx="2"/><path d="M9 2v4M15 2v4M9 18v4M15 18v4M2 9h4M2 15h4M18 9h4M18 15h4"/></svg></div><h3>Hardware and IoT</h3><p>Raspberry Pi, ESP32 and Arduino: remote monitoring, e-paper displays, acoustic detectors, jailbroken devices and services that survive reboots.</p><ul class="tags"><li>Raspberry Pi</li><li>ESP32</li><li>Arduino</li><li>systemd</li></ul></article></div>
+</section>
+
+<section id="projects" class="section">
+  <div class="head"><p class="kicker">02 · Projects</p><h2>Selected projects</h2><p class="sub">A sample of what I&#x27;ve built. Private projects can be demoed on a call.</p></div>
+  <div class="cards three"><article class="card proj"><header><span class="kind">SaaS</span><span class="year">2026</span></header><h3>FableFabio</h3><p>Restaurant menu generator managed entirely from Telegram: 14 EU allergens, 6 design themes, PNG, PDF and TV export, permanent QR code and voice editing in Spanish and English. 110 automated tests.</p><ul class="tags"><li>Python</li><li>Playwright</li><li>SQLAlchemy</li><li>OpenRouter</li></ul><span class="plink muted">Private code · demo on request</span></article><article class="card proj"><header><span class="kind">Android app</span><span class="year">2026</span></header><h3>Puffify</h3><p>Turns any photo into a collectible plush toy with AI. Daily credits, rewarded ads, purchase packs and a Cloudflare proxy that keeps the API key safe.</p><ul class="tags"><li>Kotlin</li><li>Compose</li><li>AdMob</li><li>Play Billing</li></ul><span class="plink muted">Private code · demo on request</span></article><article class="card proj"><header><span class="kind">Telegram bot + Android</span><span class="year">2026</span></header><h3>Horario Bot</h3><p>Bot that asks about your workday every night and understands text or voice notes (&quot;9 to 2 and 4 to 7&quot;), with fortnightly summaries. Packaged as an Android app with embedded Python so it runs on the phone itself.</p><ul class="tags"><li>Python</li><li>Telegram</li><li>Chaquopy</li><li>Gemini</li></ul><span class="plink muted">Private code · demo on request</span></article><article class="card proj"><header><span class="kind">Web platform</span><span class="year">2026</span></header><h3>PokéPrecio</h3><p>Pokémon card prices in euros for the Spanish market, with 23,000+ synced cards, CSV import and usage analytics. Monorepo with API, web and mobile app.</p><ul class="tags"><li>TypeScript</li><li>Next.js</li><li>pnpm</li><li>Postgres</li></ul><span class="plink muted">Private code · demo on request</span></article><article class="card proj"><header><span class="kind">IoT</span><span class="year">2026</span></header><h3>berrymonitor</h3><p>Raspberry Pi monitoring bot with secure remote access and no open ports: PIN pairing, Telegram console, temporary SSH tunnel and access audit log.</p><ul class="tags"><li>Python</li><li>Raspberry Pi</li><li>systemd</li><li>SSH</li></ul><span class="plink muted">Private code · demo on request</span></article><article class="card proj"><header><span class="kind">Hardware</span><span class="year">2026</span></header><h3>Bark Detector</h3><p>Acoustic dog-bark detector with automatic sound response: ATmega328P firmware with interrupt-driven ADC and a Python FFT detector, with event logging.</p><ul class="tags"><li>C++</li><li>Arduino</li><li>Python</li><li>FFT</li></ul><a class="plink" href="https://github.com/Robezzno/bark-detector" target="_blank" rel="noopener">View code ↗</a></article><article class="card proj"><header><span class="kind">Open source</span><span class="year">2026</span></header><h3>Kindle Legacy Toolkit</h3><p>How to keep using a jailbroken Kindle on firmware 5.16, where KUAL and KPM no longer work: root on every boot and manual app registration. Bilingual guide.</p><ul class="tags"><li>Shell</li><li>SQLite</li><li>Embedded Linux</li></ul><a class="plink" href="https://github.com/Robezzno/kindle-legacy-jailbreak-toolkit" target="_blank" rel="noopener">View code ↗</a></article><article class="card proj"><header><span class="kind">Web</span><span class="year">2025</span></header><h3>HiDoctor</h3><p>Health-education platform with evidence-based content, public landing page and community management bots for Telegram and Instagram.</p><ul class="tags"><li>Next.js</li><li>TypeScript</li><li>Telegram</li></ul><a class="plink" href="https://github.com/Robezzno/high-doctor-landing" target="_blank" rel="noopener">View code ↗</a></article><article class="card proj"><header><span class="kind">VS Code extension</span><span class="year">2025</span></header><h3>Copilot ⇄ Telegram</h3><p>Visual Studio Code extension that lets you chat with GitHub Copilot from Telegram: send messages from your phone and get the editor&#x27;s replies back.</p><ul class="tags"><li>TypeScript</li><li>VS Code API</li><li>Telegram</li></ul><span class="plink muted">Private code · demo on request</span></article></div>
+  <p class="note">120+ repositories organised by category at <a href="https://github.com/Robezzno" target="_blank" rel="noopener">github.com/Robezzno ↗</a></p>
+</section>
+
+<section id="process" class="section">
+  <div class="head"><p class="kicker">03 · How I work</p><h2>How I work</h2><p class="sub">No fluff. Every delivery can be run and verified.</p></div>
+  <ol class="steps"><li><span class="num">01</span><div><h3>We talk</h3><p>Tell me what you need on a call or by message. I&#x27;ll tell you what&#x27;s feasible, what isn&#x27;t and what the alternatives are.</p></div></li><li><span class="num">02</span><div><h3>Fixed proposal</h3><p>You get a document with scope, timeline and a fixed price. No hidden hours and no price changes halfway through.</p></div></li><li><span class="num">03</span><div><h3>Visible development</h3><p>Weekly deliveries you can try. Private repository with access from day one and automated tests.</p></div></li><li><span class="num">04</span><div><h3>Deployment and support</h3><p>I leave it running wherever you need (server, Raspberry Pi, Google Play, Cloudflare) with documentation and a support period.</p></div></li></ol>
+</section>
+
+<section id="about" class="section about">
+  <div class="head"><p class="kicker">04 · About</p><h2>About me</h2></div>
+  <div class="about-grid">
+    <div>
+      <p>I&#x27;m a self-taught developer based in Spain. I&#x27;ve spent years building tools for myself and for others: from bots that log my workday from a voice note to a restaurant-menu SaaS or an AI-powered Android app ready for Google Play.</p>
+      <p>I use AI as a copilot to ship faster, but I verify everything I deliver: tests, automated diagnostics and reproducible deployment. My rule is simple: if it can&#x27;t be run and checked, it isn&#x27;t finished.</p>
+      <p>I work in Spanish and English, remotely, across any European or American time zone.</p>
+    </div>
+    <aside class="card">
+      <h3>Usual stack</h3>
+      <ul class="tags big"><li>Python</li><li>Kotlin · Jetpack Compose</li><li>TypeScript · Next.js</li><li>Telegram Bot API</li><li>SQLAlchemy · Alembic</li><li>Playwright</li><li>Cloudflare Workers</li><li>Raspberry Pi · systemd</li><li>ESP32 · Arduino</li><li>OpenRouter · Gemini · Claude</li><li>GitHub Actions</li><li>SQLite · PostgreSQL</li></ul>
+    </aside>
+  </div>
+</section>
+
+<section id="contact" class="section contact">
+  <div class="card cta-card">
+    <p class="kicker"><span class="dot"></span>Available for new projects</p>
+    <h2>Got an idea? Let&#x27;s talk.</h2>
+    <p class="sub">Send me two lines about what you need and I&#x27;ll reply within 24 hours with next steps.</p>
+    <div class="cta-row">
+      <a class="btn" href="mailto:robezzno@gmail.com?subject=Project%20for%20SafTech">Send email</a>
+      <a class="btn ghost" href="https://github.com/Robezzno" target="_blank" rel="noopener">GitHub ↗</a>
+    </div>
+    <p class="mono email"><span class="p">$</span> curl -X POST saftech --data "your idea" <span class="muted">// robezzno@gmail.com</span></p>
+  </div>
+</section>
+</main>
+
+<footer class="foot">
+  <span>© <span id="y">2026</span> SafTech · All rights reserved.</span>
+  <span class="mono small">Plain HTML, CSS and JS. No cookies, no trackers. · <kbd>~</kbd> · <kbd>?</kbd></span>
+</footer>
+<div id="quake" class="quake" hidden><div class="termbar"><span class="tl r"></span><span class="tl y"></span><span class="tl g"></span><span class="ttl">root@saftech: ~ (quake console)</span><span class="thint">esc / ~</span></div><div id="quake-term"></div></div>
+<canvas id="matrix" class="matrix" hidden></canvas>
+<div id="crt" class="crt-overlay" aria-hidden="true"></div>
+<div id="toast" class="toast" hidden></div>
+</body>
+</html>

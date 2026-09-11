@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SafTech · Bots, apps y automatización a medida</title>
+<meta name="description" content="Desarrollador independiente. Bots de Telegram, apps Android con IA, herramientas a medida, webs y hardware conectado. Software que funciona, entregado con tests y despliegue incluido.">
+<link rel="canonical" href="https://robezzno.github.io/">
+<link rel="alternate" hreflang="es" href="https://robezzno.github.io/">
+<link rel="alternate" hreflang="en" href="https://robezzno.github.io/en/">
+<link rel="alternate" hreflang="fr" href="https://robezzno.github.io/fr/">
+<link rel="alternate" hreflang="de" href="https://robezzno.github.io/de/">
+<link rel="alternate" hreflang="pt" href="https://robezzno.github.io/pt/">
+<link rel="alternate" hreflang="x-default" href="https://robezzno.github.io/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="SafTech · Bots, apps y automatización a medida">
+<meta property="og:description" content="Desarrollador independiente. Bots de Telegram, apps Android con IA, herramientas a medida, webs y hardware conectado. Software que funciona, entregado con tests y despliegue incluido.">
+<meta property="og:url" content="https://robezzno.github.io/">
+<meta property="og:image" content="https://robezzno.github.io/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0b0f14">
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/style.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/xterm@5.3.0/css/xterm.css">
+<script>window.SAF={lang:"es",def:"es",langs:["es", "en", "fr", "de", "pt"],email:"robezzno@gmail.com",words:["Bots", "Apps", "Automatizaciones", "Herramientas", "Dispositivos"],cli:{"hint": "terminal interactiva · escribe help y pulsa Enter", "boot": ["[ ok ] montando /home/saftech", "[ ok ] cargando 120+ repositorios", "[ ok ] arrancando bots (24/7)", "[ ok ] café detectado", "listo. escribe `help` para ver los comandos."], "help": ["help        esta ayuda", "ls          secciones de la web", "cd <sec>    ir a una sección (services, projects, process, about, contact)", "cat about   sobre mí", "neofetch    info del sistema", "lang <xx>   cambiar idioma (es en fr de pt)", "hire        contratarme", "crt         modo monitor de tubo", "matrix      sigue al conejo blanco", "clear       limpiar", "...y alguno más que no aparece aquí."], "whoami": "visitante curioso. Buen comienzo.", "notfound": "comando no encontrado: {cmd}. Prueba `help`.", "sudo": "Con root no se contrata más rápido, pero me gusta tu actitud.", "hire": "Abriendo tu correo... si no se abre: robezzno@gmail.com", "rm": "Borrando la realidad... 3... 2... 1... es broma. Todo sigue aquí.", "matrix": "Sigue al conejo blanco. (clic para salir)", "crt_on": "modo CRT activado. Bienvenido a 1987.", "crt_off": "modo CRT desactivado.", "konami": "¡30 vidas! Bueno... confeti.", "exit": "No hay salida. Solo scroll.", "nosec": "esa sección no existe. Prueba `ls`.", "lang_ok": "cambiando idioma...", "lang_bad": "idiomas disponibles: es en fr de pt", "shortcuts": "atajos: ~ abre la consola · ? esta ayuda · código Konami ↑↑↓↓←→←→BA", "cat_bad": "no existe. Prueba `cat about`.", "coffee": "☕ preparando café... listo. Productividad +20%.", "vim": "Para salir de vim: no se puede. Vivimos aquí ahora.", "date": "la fecha es {date}. Buen día para empezar tu proyecto.", "secret": "Has encontrado el comando secreto. Mándame la palabra «konami» en el email y te hago un 10% de descuento en el primer proyecto."},sections:{"services": "Servicios", "projects": "Proyectos", "process": "Cómo trabajo", "about": "Sobre mí", "contact": "Contacto"}};</script>
+<script src="https://cdn.jsdelivr.net/npm/xterm@5.3.0/lib/xterm.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/xterm-addon-fit@0.8.0/lib/xterm-addon-fit.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/typed.js@2.1.0/dist/typed.umd.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/vanilla-tilt@1.8.1/dist/vanilla-tilt.min.js" defer></script>
+<script src="/assets/main.js" defer></script>
+<!--
+   ____  _  _  _____
+  / ___|| || ||  ___|   ¿Leyendo el código fuente? Buena señal.
+  \___ \| || |_| |_     Reading the source? Good sign.
+   ___) |__   _|  _|
+  |____/   |_| |_|      Abre la consola del navegador y escribe hire()
+                        Pulsa ~ en la web para la consola oculta.
+-->
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"ProfessionalService","name":"SafTech","url":"https://robezzno.github.io/","email":"robezzno@gmail.com","sameAs":["https://github.com/Robezzno"],"description":"Desarrollador independiente. Bots de Telegram, apps Android con IA, herramientas a medida, webs y hardware conectado. Software que funciona, entregado con tests y despliegue incluido.","areaServed":"Worldwide","availableLanguage":["es","en","fr","de","pt"]}
+</script>
+</head>
+<body>
+<a class="skip" href="#main">Saltar al contenido</a>
+<header class="top">
+  <a class="brand" href="/" aria-label="SafTech">
+    <span class="mark" aria-hidden="true">S4F</span><span class="word glitch" data-text="saftech">saftech</span><span class="blink" aria-hidden="true">_</span>
+  </a>
+  <nav class="menu" aria-label="Main">
+    <a href="#services">Servicios</a>
+    <a href="#projects">Proyectos</a>
+    <a href="#process">Cómo trabajo</a>
+    <a href="#about">Sobre mí</a>
+    <a class="btn small" href="#contact">Contacto</a>
+  </nav>
+  <div class="langs" aria-label="Language"><a href="/" lang="es" hreflang="es" aria-current="page" class="on" data-lang="es">ES</a><a href="/en/" lang="en" hreflang="en" data-lang="en">EN</a><a href="/fr/" lang="fr" hreflang="fr" data-lang="fr">FR</a><a href="/de/" lang="de" hreflang="de" data-lang="de">DE</a><a href="/pt/" lang="pt" hreflang="pt" data-lang="pt">PT</a></div>
+  <button class="burger" aria-label="Menu" aria-expanded="false" aria-controls="mobile-menu"><span></span><span></span><span></span></button>
+</header>
+<nav id="mobile-menu" class="mobile" hidden>
+  <a href="#services">Servicios</a>
+  <a href="#projects">Proyectos</a>
+  <a href="#process">Cómo trabajo</a>
+  <a href="#about">Sobre mí</a>
+  <a href="#contact">Contacto</a>
+  <div class="langs"><a href="/" lang="es" hreflang="es" aria-current="page" class="on" data-lang="es">ES</a><a href="/en/" lang="en" hreflang="en" data-lang="en">EN</a><a href="/fr/" lang="fr" hreflang="fr" data-lang="fr">FR</a><a href="/de/" lang="de" hreflang="de" data-lang="de">DE</a><a href="/pt/" lang="pt" hreflang="pt" data-lang="pt">PT</a></div>
+</nav>
+
+<main id="main">
+<section class="hero" id="top">
+  <div class="grid-bg" aria-hidden="true"></div>
+  <p class="eyebrow"><span class="dot"></span>SafTech · desarrollo a medida</p>
+  <h1><span class="typed" data-words="Bots|Apps|Automatizaciones|Herramientas|Dispositivos">Bots</span><br>que trabajan por ti.</h1>
+  <p class="lead">Soy un desarrollador full-stack independiente. Convierto ideas en software que funciona: bots de Telegram que atienden y registran, apps Android con IA, herramientas a medida, webs rápidas y dispositivos conectados.</p>
+  <div class="cta-row">
+    <a class="btn" href="#contact">Cuéntame tu proyecto</a>
+    <a class="btn ghost" href="#projects">Ver proyectos</a>
+  </div>
+  <div class="stats"><div class="stat"><strong>120+</strong><span>proyectos en GitHub</span></div><div class="stat"><strong>24/7</strong><span>bots en producción</span></div><div class="stat"><strong>5</strong><span>idiomas en esta web</span></div></div>
+  <div class="termwrap">
+    <div class="termbar"><span class="tl r"></span><span class="tl y"></span><span class="tl g"></span><span class="ttl">visitor@saftech: ~</span><span class="thint">terminal interactiva · escribe help y pulsa Enter</span></div>
+    <div id="hero-term" class="term" tabindex="0"><pre class="term-fallback"><span class="p">$</span> saftech --new "tu idea"
+<span class="ok">✔</span> propuesta con alcance y precio cerrado
+<span class="ok">✔</span> desarrollo con entregas semanales
+<span class="ok">✔</span> desplegado, probado y documentado<span class="cursor"></span></pre></div>
+  </div>
+</section>
+
+<section id="services" class="section">
+  <div class="head"><p class="kicker">01 · Servicios</p><h2>Qué puedo construir para ti</h2><p class="sub">Proyectos cerrados, con precio fijo y sin sorpresas. Si lo que necesitas no está aquí, pregúntame igualmente.</p></div>
+  <div class="cards three"><article class="card svc"><div class="svc-ico"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v3M8 21h8M5 8h14a2 2 0 0 1 2 2v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-6a2 2 0 0 1 2-2z"/><circle cx="9" cy="13" r="1.2"/><circle cx="15" cy="13" r="1.2"/></svg></div><h3>Bots de Telegram y automatización</h3><p>Bots que atienden clientes, toman pedidos, registran datos, envían alertas y entienden notas de voz y lenguaje natural. Con panel, base de datos y despliegue incluidos.</p><ul class="tags"><li>Python</li><li>python-telegram-bot</li><li>SQLite/Postgres</li><li>Voz e IA</li></ul></article><article class="card svc"><div class="svc-ico"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6" y="2.5" width="12" height="19" rx="2.5"/><path d="M10 18.5h4"/></svg></div><h3>Apps Android con IA</h3><p>Apps nativas en Kotlin y Jetpack Compose: generación de imágenes con IA, anuncios, compras integradas y todo lo necesario para publicarlas en Google Play.</p><ul class="tags"><li>Kotlin</li><li>Jetpack Compose</li><li>AdMob</li><li>Play Billing</li></ul></article><article class="card svc"><div class="svc-ico"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 3h6v3.5a1.5 1.5 0 0 0 3 0V3h3v6h-3.5a1.5 1.5 0 0 0 0 3H21v6h-6v-3.5a1.5 1.5 0 0 0-3 0V21H3v-6h3.5a1.5 1.5 0 0 0 0-3H3V6h6V3z"/></svg></div><h3>Extensiones y herramientas</h3><p>Extensiones de navegador y de VS Code, scrapers, paneles de datos y utilidades de línea de comandos que quitan trabajo repetitivo. También alertas de precio o de mercado por Telegram si tu negocio las necesita.</p><ul class="tags"><li>WebExtension</li><li>VS Code API</li><li>Scraping</li><li>Dashboards</li></ul></article><article class="card svc"><div class="svc-ico"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3.5 3 14.5 0 18M12 3c-3 3.5-3 14.5 0 18"/></svg></div><h3>Webs y landings</h3><p>Sitios estáticos ultrarrápidos, landings que convierten y plataformas con backend. SEO técnico y versiones en varios idiomas desde el primer día.</p><ul class="tags"><li>Next.js</li><li>HTML/CSS</li><li>SEO</li><li>i18n</li></ul></article><article class="card svc"><div class="svc-ico"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8L12 3zM5 18l.7 1.8L7.5 20.5l-1.8.7L5 23l-.7-1.8-1.8-.7 1.8-.7L5 18z"/></svg></div><h3>Integración de IA</h3><p>Conecto tu producto a modelos de lenguaje e imagen (Gemini, Claude, GPT) con proxies seguros para que las claves nunca salgan del servidor. Voz a texto, agentes y generación de contenido.</p><ul class="tags"><li>OpenRouter</li><li>Cloudflare Workers</li><li>Agentes</li><li>Voz</li></ul></article><article class="card svc"><div class="svc-ico"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6" y="6" width="12" height="12" rx="2"/><path d="M9 2v4M15 2v4M9 18v4M15 18v4M2 9h4M2 15h4M18 9h4M18 15h4"/></svg></div><h3>Hardware e IoT</h3><p>Raspberry Pi, ESP32 y Arduino: monitorización remota, pantallas e-paper, detectores acústicos, dispositivos liberados y servicios que sobreviven a reinicios.</p><ul class="tags"><li>Raspberry Pi</li><li>ESP32</li><li>Arduino</li><li>systemd</li></ul></article></div>
+</section>
+
+<section id="projects" class="section">
+  <div class="head"><p class="kicker">02 · Proyectos</p><h2>Proyectos seleccionados</h2><p class="sub">Una muestra de lo que he construido. Los proyectos privados se pueden enseñar en una llamada.</p></div>
+  <div class="cards three"><article class="card proj"><header><span class="kind">SaaS</span><span class="year">2026</span></header><h3>FableFabio</h3><p>Generador de cartas de restaurante gestionado por Telegram: 14 alérgenos UE, 6 temas de diseño, exportación a PNG, PDF y TV, QR permanente y edición por voz en español e inglés. 110 tests automatizados.</p><ul class="tags"><li>Python</li><li>Playwright</li><li>SQLAlchemy</li><li>OpenRouter</li></ul><span class="plink muted">Código privado · demo bajo petición</span></article><article class="card proj"><header><span class="kind">App Android</span><span class="year">2026</span></header><h3>Puffify</h3><p>Convierte cualquier foto en un peluche coleccionable con IA. Créditos diarios, anuncios con recompensa, packs de compra y proxy en Cloudflare para proteger la clave de la API.</p><ul class="tags"><li>Kotlin</li><li>Compose</li><li>AdMob</li><li>Play Billing</li></ul><span class="plink muted">Código privado · demo bajo petición</span></article><article class="card proj"><header><span class="kind">Bot Telegram + Android</span><span class="year">2026</span></header><h3>Horario Bot</h3><p>Bot que cada noche pregunta tu jornada y la entiende por texto o nota de voz («de 9 a 14 y de 16 a 19»), con resúmenes por quincena. Empaquetado como app Android con Python embebido para que corra en el propio móvil.</p><ul class="tags"><li>Python</li><li>Telegram</li><li>Chaquopy</li><li>Gemini</li></ul><span class="plink muted">Código privado · demo bajo petición</span></article><article class="card proj"><header><span class="kind">Plataforma web</span><span class="year">2026</span></header><h3>PokéPrecio</h3><p>Precios de cartas Pokémon en euros para el mercado español, con más de 23.000 cartas sincronizadas, importación por CSV y analítica de uso. Monorepo con API, web y app móvil.</p><ul class="tags"><li>TypeScript</li><li>Next.js</li><li>pnpm</li><li>Postgres</li></ul><span class="plink muted">Código privado · demo bajo petición</span></article><article class="card proj"><header><span class="kind">IoT</span><span class="year">2026</span></header><h3>berrymonitor</h3><p>Bot de monitorización de una Raspberry Pi con acceso remoto seguro sin abrir puertos: emparejamiento por PIN, consola por Telegram, túnel SSH temporal y auditoría de accesos.</p><ul class="tags"><li>Python</li><li>Raspberry Pi</li><li>systemd</li><li>SSH</li></ul><span class="plink muted">Código privado · demo bajo petición</span></article><article class="card proj"><header><span class="kind">Hardware</span><span class="year">2026</span></header><h3>Bark Detector</h3><p>Detector acústico de ladridos con respuesta sonora automática: firmware para ATmega328P con ADC por interrupción y detector por FFT en Python, con registro de eventos.</p><ul class="tags"><li>C++</li><li>Arduino</li><li>Python</li><li>FFT</li></ul><a class="plink" href="https://github.com/Robezzno/bark-detector" target="_blank" rel="noopener">Ver código ↗</a></article><article class="card proj"><header><span class="kind">Open source</span><span class="year">2026</span></header><h3>Kindle Legacy Toolkit</h3><p>Cómo seguir usando un Kindle liberado en firmware 5.16, donde KUAL y KPM no funcionan: root en cada arranque y registro manual de aplicaciones. Guía bilingüe.</p><ul class="tags"><li>Shell</li><li>SQLite</li><li>Embedded Linux</li></ul><a class="plink" href="https://github.com/Robezzno/kindle-legacy-jailbreak-toolkit" target="_blank" rel="noopener">Ver código ↗</a></article><article class="card proj"><header><span class="kind">Web</span><span class="year">2025</span></header><h3>HiDoctor</h3><p>Plataforma de educación sanitaria con contenido basado en evidencia, landing pública y bots de gestión de comunidad en Telegram e Instagram.</p><ul class="tags"><li>Next.js</li><li>TypeScript</li><li>Telegram</li></ul><a class="plink" href="https://github.com/Robezzno/high-doctor-landing" target="_blank" rel="noopener">Ver código ↗</a></article><article class="card proj"><header><span class="kind">Extensión VS Code</span><span class="year">2025</span></header><h3>Copilot ⇄ Telegram</h3><p>Extensión de Visual Studio Code que permite chatear con GitHub Copilot desde Telegram: envías mensajes desde el móvil y recibes las respuestas del editor.</p><ul class="tags"><li>TypeScript</li><li>VS Code API</li><li>Telegram</li></ul><span class="plink muted">Código privado · demo bajo petición</span></article></div>
+  <p class="note">Más de 120 repositorios organizados por categoría en <a href="https://github.com/Robezzno" target="_blank" rel="noopener">github.com/Robezzno ↗</a></p>
+</section>
+
+<section id="process" class="section">
+  <div class="head"><p class="kicker">03 · Cómo trabajo</p><h2>Cómo trabajo</h2><p class="sub">Sin humo. Cada entrega se puede ejecutar y comprobar.</p></div>
+  <ol class="steps"><li><span class="num">01</span><div><h3>Hablamos</h3><p>Me cuentas qué necesitas en una llamada o por mensaje. Te digo qué es viable, qué no y qué alternativas hay.</p></div></li><li><span class="num">02</span><div><h3>Propuesta cerrada</h3><p>Recibes un documento con alcance, plazos y precio fijo. Sin horas ocultas ni cambios de precio a mitad.</p></div></li><li><span class="num">03</span><div><h3>Desarrollo visible</h3><p>Entregas semanales que puedes probar. Repositorio privado con acceso desde el primer día y tests automatizados.</p></div></li><li><span class="num">04</span><div><h3>Despliegue y soporte</h3><p>Lo dejo funcionando donde lo necesites (servidor, Raspberry, Google Play, Cloudflare) con documentación y un periodo de soporte.</p></div></li></ol>
+</section>
+
+<section id="about" class="section about">
+  <div class="head"><p class="kicker">04 · Sobre mí</p><h2>Sobre mí</h2></div>
+  <div class="about-grid">
+    <div>
+      <p>Soy un desarrollador autodidacta afincado en España. Llevo años construyendo herramientas para mí y para otros: desde bots que registran mi jornada por nota de voz hasta un SaaS de cartas de restaurante o una app Android con IA lista para Google Play.</p>
+      <p>Trabajo con inteligencia artificial como copiloto para entregar más rápido, pero verifico todo lo que entrego: tests, diagnóstico automatizado y despliegue reproducible. Mi regla es simple: si no se puede ejecutar y comprobar, no está terminado.</p>
+      <p>Trabajo en español e inglés, en remoto y con cualquier zona horaria de Europa y América.</p>
+    </div>
+    <aside class="card">
+      <h3>Stack habitual</h3>
+      <ul class="tags big"><li>Python</li><li>Kotlin · Jetpack Compose</li><li>TypeScript · Next.js</li><li>Telegram Bot API</li><li>SQLAlchemy · Alembic</li><li>Playwright</li><li>Cloudflare Workers</li><li>Raspberry Pi · systemd</li><li>ESP32 · Arduino</li><li>OpenRouter · Gemini · Claude</li><li>GitHub Actions</li><li>SQLite · PostgreSQL</li></ul>
+    </aside>
+  </div>
+</section>
+
+<section id="contact" class="section contact">
+  <div class="card cta-card">
+    <p class="kicker"><span class="dot"></span>Disponible para nuevos proyectos</p>
+    <h2>¿Tienes una idea? Hablemos.</h2>
+    <p class="sub">Escríbeme con dos líneas sobre lo que necesitas y te respondo en menos de 24 horas con los siguientes pasos.</p>
+    <div class="cta-row">
+      <a class="btn" href="mailto:robezzno@gmail.com?subject=Proyecto%20para%20SafTech">Enviar email</a>
+      <a class="btn ghost" href="https://github.com/Robezzno" target="_blank" rel="noopener">GitHub ↗</a>
+    </div>
+    <p class="mono email"><span class="p">$</span> curl -X POST saftech --data "tu idea" <span class="muted">// robezzno@gmail.com</span></p>
+  </div>
+</section>
+</main>
+
+<footer class="foot">
+  <span>© <span id="y">2026</span> SafTech · Todos los derechos reservados.</span>
+  <span class="mono small">HTML, CSS y JS puros. Sin cookies ni rastreadores. · <kbd>~</kbd> · <kbd>?</kbd></span>
+</footer>
+<div id="quake" class="quake" hidden><div class="termbar"><span class="tl r"></span><span class="tl y"></span><span class="tl g"></span><span class="ttl">root@saftech: ~ (quake console)</span><span class="thint">esc / ~</span></div><div id="quake-term"></div></div>
+<canvas id="matrix" class="matrix" hidden></canvas>
+<div id="crt" class="crt-overlay" aria-hidden="true"></div>
+<div id="toast" class="toast" hidden></div>
+</body>
+</html>
