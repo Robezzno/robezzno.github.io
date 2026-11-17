@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, user-scalable=no">
+<title>Museo S4f · webs para negocios, de SafTech</title>
+<meta name="description" content="Pasea por el Museo S4f llevando a S4f: cada cuadro es una web real hecha por SafTech.">
+<meta name="theme-color" content="#06060b">
+<link rel="icon" href="data:,">
+<link rel="modulepreload" href="jugar/jugar.js">
+<link rel="preload" as="fetch" crossorigin href="assets/museo/alas.json">
+<link rel="preload" as="fetch" crossorigin href="data/museo.json">
+<link rel="preload" as="fetch" crossorigin href="assets/museo/principal.json">
+<link rel="preload" as="fetch" crossorigin href="assets/museo/principal.glb">
+<link rel="preload" as="fetch" crossorigin href="assets/s4f/s4f.glb">
+<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="jugar/jugar.css">
+</head>
+<body class="juego">
+<header class="hud juego__hud">
+  <a class="hud__boton juego__volver" href="webs.html" aria-label="Ver todas las webs en lista">Ver más webs</a>
+  <p class="hud__sala juego__sala" aria-live="polite"><span class="js-sala">Sala principal</span><small class="js-cuenta"></small></p>
+  <div class="hud__nav">
+    <button type="button" class="hud__boton juego__sonido js-sonido" aria-pressed="true" aria-label="Sonido"><span>Sonido: </span>sí</button>
+    <button type="button" class="hud__boton js-salas" aria-haspopup="dialog" aria-controls="salas">Salas</button>
+  </div>
+</header>
+
+<main class="juego__escena" id="escena">
+  <canvas class="juego__canvas" aria-label="El museo en 3D: mueve a S4f para pasear y toca un cuadro para ver la web"></canvas>
+  <p class="cine__carga juego__carga" role="status">Encendiendo la sala…</p>
+
+  <div class="juego__ayuda js-ayuda" hidden>
+    <p class="juego__ayuda-t">Pasea con S4f</p>
+    <p class="js-ayuda-txt"></p>
+    <button type="button" class="boton boton--oro js-ayuda-ok">Empezar</button>
+    <a class="juego__ayuda-lista" href="webs.html">Prefiero ver las webs en lista</a>
+  </div>
+
+  <!-- lo que hay delante: un cuadro o un arco -->
+  <div class="panel panel--cartela juego__panel js-cerca" hidden>
+    <div class="panel__txt">
+      <p class="panel__nombre js-c-nombre"></p>
+      <p class="panel__meta js-c-meta"></p>
+    </div>
+    <div class="panel__acciones">
+      <button type="button" class="boton boton--linea js-c-ver">Ver más</button>
+      <button type="button" class="boton boton--oro js-c-quiero">Quiero una así</button>
+    </div>
+  </div>
+  <div class="panel panel--cartela juego__panel js-arco" hidden>
+    <div class="panel__txt">
+      <p class="panel__nombre js-a-nombre"></p>
+      <p class="panel__meta js-a-meta"></p>
+    </div>
+    <div class="panel__acciones juego__una">
+      <button type="button" class="boton boton--oro js-a-ir">Entrar</button>
+    </div>
+  </div>
+
+  <div class="mando js-mando" aria-hidden="true"><span class="mando__palo"></span></div>
+  <button type="button" class="saltar js-saltar" aria-label="Saltar">Salta</button>
+</main>
+
+<dialog class="plano" id="salas" aria-labelledby="salas-titulo">
+  <div class="plano__cab">
+    <h2 id="salas-titulo">¿A qué sala vas?</h2>
+    <form method="dialog"><button class="plano__cerrar" aria-label="Cerrar">×</button></form>
+  </div>
+  <ul class="juego__salas js-lista-salas"></ul>
+  <div class="plano__salidas">
+    <a class="boton boton--linea" href="webs.html#taller">Taller · quiero una</a>
+    <a class="boton boton--linea" href="webs.html">Todas las webs en lista</a>
+  </div>
+</dialog>
+
+<dialog class="hoja" id="hoja" aria-labelledby="hoja-titulo">
+  <div class="hoja__cab">
+    <p class="hoja__eyebrow">La web de este cuadro</p>
+    <form method="dialog" class="hoja__cerrar"><button aria-label="Cerrar">×</button></form>
+  </div>
+  <div class="hoja__marco"><img class="hoja__img" src="data:," width="720" height="450" alt=""></div>
+  <div class="cartela hoja__cartela">
+    <span class="sello js-hoja-sello"></span>
+    <h3 id="hoja-titulo" class="js-hoja-nombre"></h3>
+    <p class="cartela__meta js-hoja-meta"></p>
+    <p class="hoja__blurb js-hoja-blurb"></p>
+    <div class="cartela__acciones">
+      <a class="boton boton--wa js-hoja-wa" href="webs.html#taller">Quiero una así</a>
+      <a class="boton boton--ver js-hoja-ver" href="#" target="_blank" rel="noopener">Ver la web ↗</a>
+    </div>
+  </div>
+</dialog>
+
+<noscript><p class="sin-js">Para pasear por el museo hace falta JavaScript. <a href="webs.html">Ver las webs en lista</a>.</p></noscript>
+<script type="module" src="jugar/jugar.js"></script>
+</body>
+</html>

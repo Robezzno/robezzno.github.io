@@ -1,0 +1,107 @@
+[
+ {
+  "ala": "hosteleria",
+  "nombre": "Hostelería",
+  "genero": "Bodegón",
+  "cuadros": 18,
+  "tris": 19424,
+  "glb_mb": 1.123,
+  "total_mb": 1.247,
+  "lightmap": {
+   "scale": 1.488484263420105,
+   "res": 2048,
+   "samples": 512,
+   "coverage": 0.776
+  }
+ },
+ {
+  "ala": "belleza",
+  "nombre": "Belleza",
+  "genero": "Retrato",
+  "cuadros": 18,
+  "tris": 18204,
+  "glb_mb": 1.097,
+  "total_mb": 1.198,
+  "lightmap": {
+   "scale": 1.5032438039779663,
+   "res": 2048,
+   "samples": 512,
+   "coverage": 0.777
+  }
+ },
+ {
+  "ala": "ocio-turismo",
+  "nombre": "Ocio y turismo",
+  "genero": "Paisaje",
+  "cuadros": 1,
+  "tris": 13744,
+  "glb_mb": 0.881,
+  "total_mb": 0.889,
+  "lightmap": {
+   "scale": 2.807969570159912,
+   "res": 2048,
+   "samples": 512,
+   "coverage": 0.789
+  }
+ },
+ {
+  "ala": "oficios",
+  "nombre": "Oficios",
+  "genero": "Forja",
+  "cuadros": 12,
+  "tris": 15320,
+  "glb_mb": 1.003,
+  "total_mb": 1.078,
+  "lightmap": {
+   "scale": 2.017213821411133,
+   "res": 2048,
+   "samples": 512,
+   "coverage": 0.776
+  }
+ },
+ {
+  "ala": "otros",
+  "nombre": "Otros",
+  "genero": "Gabinete",
+  "cuadros": 7,
+  "tris": 15044,
+  "glb_mb": 1.003,
+  "total_mb": 1.043,
+  "lightmap": {
+   "scale": 1.9711105823516846,
+   "res": 2048,
+   "samples": 512,
+   "coverage": 0.781
+  }
+ },
+ {
+  "ala": "principal",
+  "nombre": "Sala principal",
+  "genero": "Gran salón",
+  "cuadros": 12,
+  "tris": 17916,
+  "glb_mb": 1.031,
+  "total_mb": 1.104,
+  "lightmap": {
+   "scale": 2.0165939331054688,
+   "res": 2048,
+   "samples": 512,
+   "coverage": 0.774
+  }
+ },
+ {
+  "ala": "salud",
+  "nombre": "Salud",
+  "genero": "Anatomía",
+  "cuadros": 17,
+  "tris": 18204,
+  "glb_mb": 1.088,
+  "total_mb": 1.178,
+  "lightmap": {
+   "scale": 1.5338510274887085,
+   "res": 2048,
+   "samples": 512,
+   "coverage": 0.778
+  }
+ }
+]
