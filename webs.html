@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Todas las webs · Museo S4f</title>
+<meta name="description" content="Todas las webs del Museo S4f de SafTech, en lista: capturas reales de webs para negocios.">
+<meta name="theme-color" content="#06060b">
+<link rel="canonical" href="https://robezzno.github.io/webs.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="SafTech">
+<meta property="og:locale" content="es_ES">
+<meta property="og:title" content="Todas las webs · Museo S4f">
+<meta property="og:description" content="Todas las webs del Museo S4f de SafTech, en lista: capturas reales de webs para negocios.">
+<meta property="og:url" content="https://robezzno.github.io/webs.html">
+<meta property="og:image" content="https://robezzno.github.io/assets/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="preload" href="data/museo.json" as="fetch" crossorigin>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body class="lista">
+<header class="barra">
+  <a class="hud__boton" href="./">← Pasear con S4f</a>
+  <a class="hud__boton js-ir-taller" href="#taller">Quiero una web</a>
+</header>
+
+<main>
+  <section class="archivo" id="catalogo" aria-labelledby="catalogo-titulo">
+    <div class="archivo__cab">
+      <p class="eyebrow">Museo S4f · SafTech</p>
+      <h1 id="catalogo-titulo" tabindex="-1">Todas las webs, <span class="js-total">154</span> ejemplos</h1>
+      <p>Toca una para verla. «Cliente real» es una web en producción; «Web de ejemplo» es una demo hecha para enseñar el estilo.</p>
+    </div>
+    <form class="filtros" id="filtros" role="search" onsubmit="return false">
+      <fieldset class="chips chips--filtro" id="chips-archivo">
+        <legend class="sr-only">Sector</legend>
+      </fieldset>
+      <div class="filtros__fila">
+        <label class="buscar"><span class="sr-only">Buscar por nombre, tipo o ciudad</span>
+          <input type="search" id="buscar" placeholder="Nombre, tipo o ciudad" autocomplete="off">
+        </label>
+        <label class="check"><input type="checkbox" id="solo-reales"> Solo <span class="check__largo">clientes </span>reales</label>
+      </div>
+    </form>
+    <p class="archivo__cuenta" id="cuenta" role="status" aria-live="polite"></p>
+    <ul class="fichas" id="fichas"></ul>
+  </section>
+
+  <section class="taller" id="taller" aria-labelledby="taller-titulo">
+    <div class="taller__cab">
+      <img class="taller__s4f" src="assets/s4f-taller.webp" width="360" height="638" alt="" loading="lazy" decoding="async">
+      <div>
+        <p class="eyebrow">El taller</p>
+        <h2 id="taller-titulo" tabindex="-1">Aquí se pintan las webs del museo</h2>
+        <p class="taller__ctx js-taller-ctx">Elige el paquete y te escribimos con lo que has visto en el museo.</p>
+      </div>
+    </div>
+    <ol class="paquetes" id="paquetes"></ol>
+    <ul class="taller__garantias js-garantias"></ul>
+    <div class="taller__directo">
+      <p>¿No sabes cuál te encaja? Cuéntanos tu negocio y te lo decimos.</p>
+      <a class="boton boton--wa boton--grande js-taller-wa" href="#" target="_blank" rel="noopener">Hablar por WhatsApp</a>
+      <p class="taller__mail js-taller-mail" hidden>O escríbenos a <a href="#"></a></p>
+      <p class="decision__otros"><a href="./">Pasear con S4f</a> <span aria-hidden="true">·</span> <a class="js-ir-catalogo" href="#catalogo">Volver a la lista</a></p>
+    </div>
+  </section>
+
+  <dialog class="hoja" id="hoja" aria-labelledby="hoja-titulo">
+    <div class="hoja__cab">
+      <p class="hoja__eyebrow">Ficha de la web</p>
+      <form method="dialog" class="hoja__cerrar"><button aria-label="Cerrar la ficha">×</button></form>
+    </div>
+    <div class="hoja__marco"><img class="hoja__img" src="data:," width="720" height="450" alt=""></div>
+    <div class="cartela hoja__cartela">
+      <span class="sello js-hoja-sello"></span>
+      <h3 id="hoja-titulo" class="js-hoja-nombre"></h3>
+      <p class="cartela__meta js-hoja-meta"></p>
+      <p class="hoja__blurb js-hoja-blurb"></p>
+      <div class="cartela__acciones">
+        <a class="boton boton--wa js-hoja-wa" href="#taller">Quiero una así</a>
+        <a class="boton boton--ver js-hoja-ver" href="#" target="_blank" rel="noopener">Ver la web ↗</a>
+      </div>
+    </div>
+  </dialog>
+</main>
+
+<a class="boton boton--oro flota js-flota js-ir-taller" href="#taller">Quiero una web</a>
+
+<footer class="pie">
+  <p>Museo S4f es un prototipo de <strong>SafTech</strong>. Todas las imágenes son capturas de webs reales hechas por SafTech.</p>
+  <p>Contacto: <a class="js-pie-mail" href="#" hidden></a></p>
+  <p class="pie__creditos">Tipografía Cormorant Garamond (OFL) · Texturas CC0 de Poly Haven y ambientCG.</p>
+</footer>
+
+<noscript><p class="sin-js">La lista de webs necesita JavaScript.</p></noscript>
+<script src="config.js"></script>
+<script src="webs.js"></script>
+</body>
+</html>

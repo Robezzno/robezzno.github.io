@@ -1,0 +1,266 @@
+/* SafTech · escena 3D detrás de la página (ver docs/PLAN-3D.md)
+   .has-3d       → escritorio con WebGL: texto a la izquierda, escena a la derecha
+   .scene-poster → móvil / sin WebGL / movimiento reducido: póster fijo + página normal
+   .scene-dim    → secciones anchas (galería, packs): la escena se oscurece y el contenido usa todo el ancho */
+
+.scene-bg, #scene3d, .scene-scrim, #scene-tip, #monitor-slot, .scene-hint { display: none; }
+
+/* ---------- comunes a ambos modos ---------- */
+.has-3d .aurora, .scene-poster .aurora { display: none; }
+.has-3d .scene-bg, .scene-poster .scene-bg {
+  display: block; position: fixed; inset: 0; z-index: -1;
+  background: #05060c url("/assets/scene/poster.webp") 70% 50% / cover no-repeat;
+}
+.has-3d body, .scene-poster body { background: #05060c; }
+
+/* ---------- póster (móvil) ---------- */
+.scene-poster .scene-bg::after {
+  content: ""; position: absolute; inset: 0;
+  background: linear-gradient(180deg, rgba(5,6,12,.35) 0%, rgba(5,6,12,.82) 50%, rgba(5,6,12,.94) 100%);
+}
+
+/* ---------- escritorio 3D ---------- */
+.has-3d #scene3d {
+  display: block; position: fixed; inset: 0; width: 100vw; height: 100vh; z-index: -1;
+  opacity: 0; transition: opacity .9s ease;
+}
+.has-3d.scene-ready #scene3d { opacity: 1; }
+.has-3d .scene-scrim { display: block; position: fixed; inset: 0; z-index: -1; pointer-events: none; }
+.split .scene-scrim {
+  background:
+    linear-gradient(0deg, rgba(5,6,12,.75) 0%, rgba(5,6,12,0) 22%),
+    linear-gradient(90deg, rgba(5,6,12,.92) 0%, rgba(5,6,12,.78) 30%, rgba(5,6,12,.32) 46%, rgba(5,6,12,0) 58%);
+}
+.has-3d .scene-scrim::after {
+  content: ""; position: absolute; inset: 0; background: rgba(5,6,12,.84);
+  opacity: 0; transition: opacity .5s ease;
+}
+.has-3d.scene-dim .scene-scrim::after { opacity: 1; }
+
+.has-3d .hero-art { display: none; }   /* la escena es la ilustración del hero */
+
+/* split · capítulos: columna de texto a la izquierda, escena a la derecha */
+.split main > section {
+  max-width: none; margin: 0; min-height: 100vh;
+  padding-left: clamp(24px, 5vw, 88px); padding-right: 54vw;
+  display: flex; flex-direction: column; justify-content: center;
+}
+.split .hero { display: flex; padding-top: 40px; padding-bottom: 40px; gap: 28px; }
+.split .hero .stats { align-self: flex-start; }
+.split .head { max-width: none; }
+.split .cards.three, .split .incl { grid-template-columns: 1fr 1fr; gap: 14px; }
+.split .about-grid { grid-template-columns: 1fr; }
+.split .contact .cta-card { text-align: left; }
+.split .contact .cta-row, .split .contact .cta-card .kicker { justify-content: flex-start; }
+.split .contact .cta-card .sub { margin-left: 0; margin-right: 0; }
+.split .sub.center { text-align: left; }
+
+/* secciones anchas: la cabecera en la columna, la rejilla a todo el ancho */
+.split #projects, .split #packs { padding-right: clamp(24px, 5vw, 88px); }
+.split #projects .head, .split #projects .filters, .split #packs .head { max-width: 40vw; }
+.split #projects .head { margin-top: 18vh; margin-bottom: 24px; }
+.split #projects .filters { margin-bottom: 30vh; }
+.split #packs .cards.three { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.split #packs .sub.center { text-align: center; }
+
+.has-3d .scene-hint { display: block; color: var(--muted); font: .8rem var(--mono); margin: 0; opacity: .85; }
+.scene-hint:not(:empty)::before { content: "↓"; color: var(--acc2); display: inline-block; margin-right: 8px; animation: hint-bob 1.6s ease-in-out infinite; }
+@keyframes hint-bob { 50% { transform: translateY(3px); } }
+
+/* etiqueta flotante al pasar por un objeto */
+.has-3d #scene-tip {
+  display: block; position: fixed; left: 0; top: 0; z-index: 60; pointer-events: none;
+  font: 600 .78rem var(--mono); color: #04121a; background: var(--acc2); padding: 5px 10px; border-radius: 999px;
+  box-shadow: 0 0 18px rgba(94,234,212,.5); opacity: 0; transition: opacity .15s;
+}
+.has-3d #scene-tip.on { opacity: 1; }
+
+/* terminal real encajada en la pantalla del monitor (capítulo contacto) */
+.has-3d #monitor-slot {
+  display: flex; flex-direction: column; position: fixed; z-index: 2; opacity: 0; pointer-events: none;
+  background: #0b1126; border-radius: 4px; overflow: hidden; box-shadow: 0 0 40px rgba(94,234,212,.22);
+  transition: opacity .35s ease;
+}
+.has-3d #monitor-slot.on { opacity: 1; pointer-events: auto; }
+.has-3d #monitor-slot .termbar { flex: none; }
+.has-3d #monitor-slot .mterm { flex: 1; min-height: 0; padding: 8px 10px; }
+
+/* pantallas de escritorio estrechas: tarjetas en una columna */
+@media (max-width: 1279px) {
+  .split .cards.three, .split .incl { grid-template-columns: 1fr; }
+  .split #packs .cards.three { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
+
+/* (paneles y rendimiento sin backdrop-filter: ver assets/holo.css) */
+.split .steps { grid-template-columns: 1fr 1fr; }
+
+/* ---------- stack (móvil / vertical): escenario arriba, el contenido entra encima ----------
+   Cada sección empieza con un "escenario" (padding-top) donde la escena se ve limpia; al seguir
+   bajando, scene3d.js sube --dim y la escena se oscurece bajo el contenido. */
+.stack #scene3d { height: 100lvh; }
+.stack .scene-scrim {
+  background: linear-gradient(180deg, rgba(5,6,12,.55) 0%, rgba(5,6,12,0) 14%, rgba(5,6,12,0) 46%, rgba(5,6,12,.7) 72%, rgba(5,6,12,.9) 100%);
+}
+.stack .scene-scrim::after { opacity: var(--dim, 0); transition: none; background: rgba(5,6,12,.86); }
+.stack main > section { padding-top: 58svh; }
+.stack .hero { padding-top: 44svh; }
+.stack .hero h1 { text-shadow: 0 2px 24px rgba(5,6,12,.8); }
+.stack .head { text-shadow: 0 2px 18px rgba(5,6,12,.85); }
+.stack .scene-hint { display: block; color: var(--muted); font: .78rem var(--mono); margin: 4px 0 0; }
+.stack #scene-tip, .stack #monitor-slot { display: none; }
+
+/* destino de un toque/clic en la escena: se resalta para que se vea a dónde has ido.
+   Contorno + sombra con !important: no debe chocar con las animaciones de entrada (.reveal.in). */
+.has-3d .scene-hover, .has-3d .scene-hit {
+  outline: 2px solid #5eead4 !important; outline-offset: 4px;
+  box-shadow: 0 0 0 1px rgba(94,234,212,.5), 0 0 48px rgba(94,234,212,.45) !important;
+}
+.has-3d .scene-hit { outline-width: 3px !important; }
+.has-3d .card, .has-3d .steps, .has-3d .about-grid, .has-3d .cta-card { transition: outline-color .5s, box-shadow .5s; }
+
+/* ================================================================ visita guiada (/3d/)
+   Una sola pantalla: rótulo de la parada abajo a la izquierda, raíl de paradas a la derecha,
+   botón "siguiente" abajo y panel holográfico con el detalle (lateral en PC, hoja en móvil). */
+.tour body { overflow: hidden; }
+.tour .foot { display: none; }
+.has-3d.tour .scene-scrim {
+  background:
+    radial-gradient(ellipse 70% 60% at 0% 100%, rgba(5,6,12,.92) 0%, rgba(5,6,12,.62) 40%, rgba(5,6,12,0) 72%),
+    linear-gradient(0deg, rgba(5,6,12,.45) 0%, rgba(5,6,12,0) 28%);
+}
+.tour main > section { display: none !important; }
+
+/* raíl de paradas */
+.tour #tour-rail:not([hidden]) {
+  position: fixed; z-index: 6; right: clamp(14px, 2.4vw, 36px); top: 50%; transform: translateY(-50%);
+  display: flex; flex-direction: column; align-items: flex-end; gap: 12px;
+}
+.tour #tour-rail button {
+  display: flex; align-items: center; gap: 10px; background: none; border: 0; cursor: pointer; padding: 3px 0;
+  color: var(--muted); font: 500 .72rem var(--mono); letter-spacing: .1em; text-transform: uppercase;
+}
+.tour #tour-rail button::after {
+  content: ""; width: 8px; height: 8px; border-radius: 4px; border: 1px solid var(--line2);
+  transition: height .4s cubic-bezier(.2, .7, .2, 1), background .3s, box-shadow .3s;
+}
+.tour #tour-rail button span { opacity: 0; transform: translateX(6px); transition: opacity .3s, transform .3s; }
+.tour #tour-rail button:hover span, .tour #tour-rail button.on span { opacity: 1; transform: none; }
+.tour #tour-rail button.on { color: var(--mint); }
+.tour #tour-rail button.on::after { height: 24px; background: var(--mint); border-color: var(--mint); box-shadow: 0 0 12px var(--mint); }
+
+/* siguiente parada */
+.tour #tour-next:not([hidden]) {
+  position: fixed; z-index: 6; left: 50%; bottom: 22px; transform: translateX(-50%);
+  background: rgba(8, 18, 38, .72); border: 1px solid var(--line2); color: var(--txt); cursor: pointer;
+  font: 500 .78rem var(--mono); letter-spacing: .06em; padding: 8px 16px; border-radius: 999px;
+  animation: tcap-in .8s .3s both, tnext 2.4s 1.2s ease-in-out infinite;
+}
+.tour #tour-next:hover { border-color: var(--mint); color: var(--mint); }
+@keyframes tnext { 50% { transform: translateX(-50%) translateY(4px); } }
+@keyframes tcap-in { from { opacity: 0; transform: translateY(18px); filter: blur(4px); } }
+
+/* panel de detalle */
+.tour #tour-panel:not([hidden]) {
+  position: fixed; z-index: 30; top: 12px; right: 12px; bottom: 12px; width: min(780px, 58vw);
+  border-radius: 14px; display: flex; flex-direction: column; overflow: hidden;
+  opacity: 0; transform: translateX(36px);
+  transition: opacity .35s ease, transform .5s cubic-bezier(.2, .7, .2, 1);
+}
+.tour #tour-panel.on { opacity: 1; transform: none; }
+.tour .tclose {
+  position: absolute; top: 12px; right: 12px; z-index: 2; width: 38px; height: 38px; border-radius: 9px; cursor: pointer;
+  background: rgba(8, 18, 38, .85); border: 1px solid var(--line2); color: var(--txt); font-size: 1rem;
+}
+.tour .tclose:hover { border-color: var(--mint); color: var(--mint); }
+.tour .tbody { overflow-y: auto; overscroll-behavior: contain; padding: 26px 28px 48px; }
+.tour .tbody > section {
+  display: block !important; position: static !important; min-height: 0 !important; width: auto !important;
+  max-width: none !important; margin: 0 !important; padding: 14px 0 34px !important; animation: none;
+}
+.tour .tbody > section + section { border-top: 1px solid var(--line); padding-top: 34px !important; }
+.tour .tbody .head { max-width: none !important; margin: 0 0 22px !important; }
+.tour .tbody .filters { max-width: none !important; margin: 0 0 20px !important; }
+.tour .tbody #projects .head { margin-top: 0 !important; }
+.tour .tbody .cards.three, .tour .tbody .work, .tour .tbody .incl, .tour .tbody .steps, .tour .tbody #packs .cards.three {
+  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)) !important; gap: 14px;
+}
+.tour .tbody .about-grid { grid-template-columns: 1fr; }
+.tour .reveal { opacity: 1 !important; transform: none !important; }
+
+/* móvil */
+.tour.stack #tour-rail button span { display: none; }
+.tour.stack #tour-rail:not([hidden]) { top: 34%; gap: 10px; right: 10px; }
+.tour.stack #tour-panel:not([hidden]) { top: 9vh; left: 0; right: 0; bottom: 0; width: auto; border-radius: 16px 16px 0 0; transform: translateY(40px); }
+.tour.stack #tour-panel.on { transform: none; }
+.tour.stack .tbody { padding: 22px 18px 40px; }
+.has-3d.tour.stack .scene-scrim { background: linear-gradient(180deg, rgba(5,6,12,.5) 0%, rgba(5,6,12,0) 16%, rgba(5,6,12,0) 42%, rgba(5,6,12,.85) 70%, rgba(5,6,12,.95) 100%); }
+.tour.stack .scene-scrim::after { opacity: 0; }
+.tour.stack.scene-dim .scene-scrim::after { opacity: 1; }
+
+/* ---------- visita: tamaño y orientación ----------
+   horizontal (split) = sujeto a la derecha · vertical (stack) = sujeto arriba, rótulo holográfico abajo */
+
+/* tablets en vertical: rótulo con más aire, sin ocupar todo el ancho */
+@media (min-width: 700px) and (orientation: portrait) {
+  .tour.stack #tour-rail button span { display: inline; }
+  .tour.stack #tour-rail:not([hidden]) { top: 30%; right: 18px; }
+  .tour.stack #tour-panel:not([hidden]) { top: 14vh; left: 4vw; right: 4vw; border-radius: 16px 16px 0 0; }
+}
+/* horizontal con poca altura (móvil girado, ventanas bajas): controles compactos */
+@media (orientation: landscape) and (max-height: 560px) {
+  .tour .top { margin-top: 6px; padding-top: 6px; padding-bottom: 6px; }
+  .tour .cta-row .btn { padding: 7px 12px; font-size: .78rem; }
+  .tour #tour-next:not([hidden]) { bottom: 10px; padding: 5px 12px; font-size: .7rem; }
+  .tour #tour-rail:not([hidden]) { gap: 6px; top: 56%; }
+  .tour #tour-rail button span { display: none; }
+  .tour.split #tour-panel:not([hidden]) { top: 6px; bottom: 6px; right: 6px; width: min(68vw, 700px); }
+  .tour .tbody { padding: 18px 18px 30px; }
+}
+/* pantallas grandes: todo escala para no quedarse pequeño */
+@media (min-width: 1800px) and (min-height: 900px) {
+  .tour #tour-rail button { font-size: .8rem; }
+  .tour.split #tour-panel:not([hidden]) { width: min(940px, 48vw); }
+}
+
+/* barra superior autoocultable en la visita (scene3d.js: showHeader / hideHeader) */
+.tour .top { transition: transform .5s cubic-bezier(.2, .7, .2, 1), opacity .35s ease; }
+.tour.hdr-hidden .top { transform: translateY(calc(-100% - 28px)); opacity: 0; pointer-events: none; }
+.tour.hdr-hidden #mobile-menu { display: none; }
+
+/* --- ajustes de la verificación por dispositivos --- */
+/* raíl sobre su propia pastilla: no se confunde con luces de la escena */
+.tour #tour-rail:not([hidden]) { background: rgba(5, 9, 22, .55); border: 1px solid var(--line); border-radius: 999px; padding: 10px 8px; }
+.tour.split #tour-rail:not([hidden]) { padding: 12px 10px 12px 14px; border-radius: 14px; }
+/* con el panel abierto: nada por encima ni a través */
+.tour.tpanel-open #tour-rail, .tour.tpanel-open #tour-next { opacity: 0 !important; visibility: hidden; pointer-events: none; transition: opacity .25s, visibility 0s .25s; }
+.tour #tour-panel { z-index: 45 !important; }
+@media (max-height: 620px) and (orientation: portrait) { .tour.stack #tour-rail:not([hidden]) { top: 24%; } }
+/* pantallas muy grandes (QHD+): toda la interfaz de la visita escala */
+@media (min-width: 2200px) and (min-height: 1200px) {
+  .tour .top, .tour #tour-rail, .tour #tour-next, .tour #tour-panel { zoom: 1.3; }
+}
+/* ronda 2 */
+.tour.stack #tour-rail:not([hidden]) { top: 92px !important; transform: none; }
+@media (hover: none) { #scene-tip { display: none !important; } }
+/* póster mientras carga, en vertical: que se vea el escritorio, no sólo la ventana */
+@media (orientation: portrait) { .has-3d.tour .scene-bg { background-position: 58% 50%; background-size: auto 62vh; background-repeat: no-repeat; background-color: #05060c; } }
+/* visita 100 % 3D: sin rótulos HTML; mientras carga, un indicador discreto sobre el póster */
+.has-3d.tour:not(.scene-ready) .scene-bg::after {
+  content: "● cargando el escritorio…"; position: absolute; left: 50%; bottom: 28px; transform: translateX(-50%);
+  font: 500 .78rem var(--mono); color: var(--mint); letter-spacing: .08em; padding: 8px 16px; border-radius: 999px;
+  background: rgba(5, 9, 22, .75); border: 1px solid var(--line); animation: tnext 1.6s ease-in-out infinite;
+}
+/* los títulos son hologramas con su propio halo: ninguna capa HTML por encima del canvas (salvo al abrir el panel) */
+.has-3d.tour .scene-scrim, .has-3d.tour.stack .scene-scrim { background: none !important; }
+/* mirar alrededor inclinando el móvil (scene3d.js: tilt) */
+/* píldora PROPIA colgando bajo el raíl (scene3d.js: placeTilt la sitúa con el raíl medido):
+   ni dentro del raíl —engordaría la pastilla en pantallas estrechas— ni abajo a la izquierda
+   (ahí viven los hologramas pulsables) ni abajo al centro (ahí vive «siguiente»). */
+.tour #tilt-btn:not([hidden]) {
+  position: fixed; z-index: 6; right: clamp(14px, 2.4vw, 36px); top: 240px; cursor: pointer;
+  background: rgba(8, 18, 38, .72); border: 1px solid var(--line2); color: var(--muted);
+  font: 500 .7rem var(--mono); letter-spacing: .04em; padding: 5px 10px; border-radius: 999px;
+}
+.tour #tilt-btn.on { color: var(--mint); border-color: var(--mint); box-shadow: 0 0 12px -3px var(--mint); }
+.tour.tpanel-open #tilt-btn { opacity: 0; visibility: hidden; pointer-events: none; }
+@media (max-width: 400px) { .tour #tilt-btn:not([hidden]) { max-width: 150px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; } }
